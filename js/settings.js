@@ -10,5 +10,10 @@ class Settings{
         this.tileheight = 36;
         this.offsetx  = 300; 
         this.offsety  = 30; 
+
+        //Game Settings
+        this.ticklength = 500;
+        this.minwordlen = 3;
+        this.maxwordlen = 8;
     }
 }
