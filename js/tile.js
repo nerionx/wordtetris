@@ -8,8 +8,8 @@ class Tile{
     }
 
     randomLetter(){
-        var randomNumber = floor(random(25));
-        var availableletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var availableletters = "AAAABCCDDDEEEEFGHHHIIIJKLLMMNNNOOOOPQRRRSSSSTTTTUUVWWWXYYYZ"; //Multiples are based on how common they are in english words
+        var randomNumber = floor(random(availableletters.length));
         return availableletters.charAt(randomNumber);
     }
 

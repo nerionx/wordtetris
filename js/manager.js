@@ -33,6 +33,8 @@ class GameManager{
     }
 
     draw(){
+        background(0); //Draw background (we are using this to clear the screen)
+        ui.draw() //Draw the ui
         for(var i = 0; i < this.tiles.length; i++){
             this.tiles[i].draw();
         }
