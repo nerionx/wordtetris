@@ -29,7 +29,7 @@ class Dictionary{
  */
     stripWords(min,max){
         console.log("Pruning Dictionary min:"+min + " max:"+max);
-        for(var i = this.dictionary.length-1; i>=0; i--){
+        for(var i = this.dictionary.length-1; i>=0; i--){ //Have to go backwards as we are going to delete from this array as we are going through it. 
             if(this.dictionary[i].length < min || this.dictionary[i].length > max){
                 this.dictionary.splice(i,1);
             }

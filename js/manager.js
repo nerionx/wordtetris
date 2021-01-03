@@ -130,8 +130,9 @@ class GameManager{
         console.log("Searching for words");
         for(i = 0; i<tileshorizontal.length;i++){
             dict.search(tileshorizontal[i],settings.minwordlen,settings.maxwordlen);
+            dict.search(reverseString(tileshorizontal[i]),settings.minwordlen,settings.maxwordlen);
         }
 
     }
         
-}
+} 
