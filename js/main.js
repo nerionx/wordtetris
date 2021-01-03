@@ -3,6 +3,7 @@ var ui = new UI(); //Class contains functions for manipulating and drawing the U
 var manager = new GameManager(); //Class contains game logic
 var dict //For future use, will hold our dictionary, we cant initialise it here as we dont have loadStrings from P5js yet
 
+
 //This is done during the preload, the loading splash screen will be shown on the page
 function preload(){
     dict = new Dictionary(loadStrings("./data/engmix.txt"));    
@@ -42,3 +43,17 @@ function reverseString(str) {
       return reverseString(str.substr(1)) + str.charAt(0);
   }
 
+
+/**
+ * Creates a 2d array, the cols isnt set as it is not required
+ * @param {*} rows - Number of rows in the array
+ * @return {array} - Empty array
+ */
+function Create2DArray(rows) {
+    var arr = [];
+ 
+    for (var i=0;i<rows;i++) {
+        arr[i] = [];
+    }
+    return arr;
+}

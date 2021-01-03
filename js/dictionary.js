@@ -13,7 +13,6 @@ class Dictionary{
      * @return {boolean} Returns true if the word was found
      */
     search(str){
-        console.log("Searching String: "+str.toLowerCase())
         for(var i=0; i<this.dictionary.length; i++){
             if(str.toLowerCase().includes(this.dictionary[i])){
                 console.log("Found Word: "+ this.dictionary[i]);

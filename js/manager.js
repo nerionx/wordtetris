@@ -7,6 +7,7 @@ class GameManager{
         /**@type {number}*/
         this.timer =0;
         this.activetile = false;
+        this.grid = Create2DArray(settings.gamewidth);
         
         
         
@@ -22,6 +23,22 @@ class GameManager{
                 this.generateTile();
             }else{
                 this.activetile = false;
+                //New tile grid code
+                for(var a = 0;a < settings.gamewidth; a++){
+                    for(var b = 0;b < settings.gameheight; b++){
+                        if(b+1 > settings.gameheight-1 || this.grid[a][b+1]){
+                            if(this.grid[a][b]){
+                                this.grid[a][b].active = false;
+                            }
+                        }else{
+                            this.grid[a][b+1]=this.grid[a][b];
+                            this.grid[a][b]=null;
+                        }
+                    }
+                }
+
+
+
                 for(var j=0; j<this.tiles.length;j++){
                     if(this.canMoveDown(this.tiles[j],j)){
                         this.tiles[j].update();
@@ -41,6 +58,11 @@ class GameManager{
     }
 
     canMoveDown(tile, index){
+        //New tiles grid code
+
+
+
+        //Old tiles array code
         if(this.tiles.length==1 && tile.y + 1 < settings.gameheight){ //If the tile is the only one on the board and it is not at the bottom of the play area
             this.activetile = true;
             return true;
@@ -65,6 +87,7 @@ class GameManager{
 
     generateTile(){
         console.log("New tile created");
+        this.grid[3][0] = new Tile();
         this.tiles.push(new Tile());
         this.activetile = true;
     }
